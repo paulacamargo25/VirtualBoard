@@ -614,10 +614,10 @@ PlayerSettings:
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
     Build: 0
-    Collab: 0
+    Collab: 1
     ErrorHub: 0
     Hub: 0
-    UNet: 0
+    UNet: 1
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -637,10 +637,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 5eb820a3-2975-4cbb-bc15-762dc766057c
+  cloudProjectId: 713871dc-5918-486c-9e0f-a29aeb729460
   framebufferDepthMemorylessMode: 0
-  projectName: ejemplo htc (1)
-  organizationId: paulitacv25
+  projectName: ejemplo htc
+  organizationId: juan-velasquez-75f42163-755b-4808-8578-a3ae2071f085
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
