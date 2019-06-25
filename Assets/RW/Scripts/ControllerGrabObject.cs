@@ -26,7 +26,6 @@ public class ControllerGrabObject : MonoBehaviour
         {
             if (collidingObject)
             {
-                print(collidingObject.name);
                 GrabObject();
             }
         }
@@ -102,9 +101,14 @@ public class ControllerGrabObject : MonoBehaviour
             // 2
             GetComponent<FixedJoint>().connectedBody = null;
             Destroy(GetComponent<FixedJoint>());
-            // 3
-            objectInHand.GetComponent<Rigidbody>().velocity = controllerPose.GetVelocity();
-            objectInHand.GetComponent<Rigidbody>().angularVelocity = controllerPose.GetAngularVelocity();
+            print(objectInHand.name);
+            if (objectInHand.name == "Ticket") {
+                print("es un ticket");
+            } else {
+                objectInHand.GetComponent<Rigidbody>().velocity = controllerPose.GetVelocity();
+                objectInHand.GetComponent<Rigidbody>().angularVelocity = controllerPose.GetAngularVelocity();
+            }
+
 
         }
         // 4
