@@ -11,6 +11,7 @@ public class Ticket : MonoBehaviour
     public Board board;
     public Material baseMat;
     public Client client;
+    public GameObject menu;
 
     float max;
 
@@ -23,7 +24,7 @@ public class Ticket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnMouseDown()
@@ -37,6 +38,19 @@ public class Ticket : MonoBehaviour
     { 
         Debug.Log("========= UUPPPP ======");
         client.SendMsgToServer("R|" + this.name+'|'+transform.position.x+'|'+transform.position.y+'|'+transform.position.z);
+    }
+
+    void OnMouseOver() 
+    {
+        if(Input.GetMouseButtonDown(1))
+        {
+            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.075f);
+            Vector3 STWP = Camera.main.ScreenToWorldPoint(curScreenPoint);
+            STWP.z = 4.9f;
+
+            Instantiate(menu, STWP, transform.rotation);
+            Debug.Log("Right click on this object");
+        }    
     }
 
     void OnMouseDrag()
