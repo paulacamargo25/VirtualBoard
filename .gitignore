@@ -1,11 +1,9 @@
-<<<<<<< HEAD
-# This .gitignore file should be pla
-=======
+
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
->>>>>>> d9a244aadb7e1959de442ca843bc408ccd92a144
+
 
 /[Ll]ibrary/
 /[Tt]emp/
@@ -14,8 +12,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
-<<<<<<< HEAD
-=======
+
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
@@ -26,7 +23,7 @@
 
 
 Library/
->>>>>>> d9a244aadb7e1959de442ca843bc408ccd92a144
+
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
@@ -78,8 +75,5 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
-<<<<<<< HEAD
-=======
 
 .vscode/
->>>>>>> d9a244aadb7e1959de442ca843bc408ccd92a144
