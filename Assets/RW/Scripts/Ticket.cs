@@ -6,8 +6,12 @@ public class Ticket : MonoBehaviour
 {
     private Vector3 screenPoint;
     private Vector3 offset;
+
     [Header("UI References")]
     public Board board;
+    public Material baseMat;
+    public Client client;
+
     float max;
 
     // Start is called before the first frame update
@@ -23,18 +27,22 @@ public class Ticket : MonoBehaviour
     }
 
     void OnMouseDown()
+    {
+        Debug.Log(name);
+        Debug.Log(client.myColor);
+        client.SendMsgToServer("S|" + this.name+'|'+client.myColor[0]+'|'+client.myColor[1]+'|'+client.myColor[2]);
+    }
+
+    void OnMouseUp()
     { 
+        Debug.Log("========= UUPPPP ======");
+        client.SendMsgToServer("R|" + this.name+'|'+transform.position.x+'|'+transform.position.y+'|'+transform.position.z);
     }
 
     void OnMouseDrag()
     {  
         Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.075f);
-        Vector3 STWP = Camera.main.ScreenToWorldPoint(curScreenPoint);
-        
-        Debug.Log("x " + STWP.x);
-        Debug.Log("y " + STWP.y);
-        Debug.Log("z " + STWP.z);        
-        
+        Vector3 STWP = Camera.main.ScreenToWorldPoint(curScreenPoint);     
         STWP.z = 5.075f;
 
         int j = 0;
@@ -49,7 +57,6 @@ public class Ticket : MonoBehaviour
         }
         STWP.x = board.xList[j];
  
-        Debug.Log("init " + STWP.y.ToString());
         if(STWP.y > 2.1f)
         {
             STWP.y = 2.1f;
@@ -57,7 +64,6 @@ public class Ticket : MonoBehaviour
         else if(STWP.y < 1.3f) {
             STWP.y = 1.3f;
         }
-        Debug.Log("end " + STWP.y.ToString());
 
         transform.position = STWP;
     }

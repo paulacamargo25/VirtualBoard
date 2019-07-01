@@ -108,7 +108,7 @@ public class Server : MonoBehaviour
         MyNetworkMessage messageContainer = new MyNetworkMessage();
         messageContainer.message = objectMessage.message;
         ServerLog("Sent to all the message: " + objectMessage.message);
-        NetworkServer.SendToAll(messageID,messageContainer);
+        NetworkServer.SendToAll(messageID, messageContainer);
     }
 
     //Custom Server Log
