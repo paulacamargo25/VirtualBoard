@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Ticket : MonoBehaviour
 {
-    private Vector3 screenPoint;
-    private Vector3 offset;
     [Header("UI References")]
     public Board board;
+    public GameObject menu;
     float max;
 
     // Start is called before the first frame update
@@ -19,11 +18,25 @@ public class Ticket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnMouseDown()
     { 
+
+    }
+
+    void OnMouseOver() 
+    {
+        if(Input.GetMouseButtonDown(1))
+        {
+            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.075f);
+            Vector3 STWP = Camera.main.ScreenToWorldPoint(curScreenPoint);
+            STWP.z = 4.9f;
+
+            Instantiate(menu, STWP, transform.rotation);
+            Debug.Log("Right click on this object");
+        }    
     }
 
     void OnMouseDrag()
