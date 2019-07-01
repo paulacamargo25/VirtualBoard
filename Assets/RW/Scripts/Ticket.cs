@@ -18,6 +18,7 @@ public class Ticket : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        baseMat = GetComponent<Renderer>().material;
         
     }
 
@@ -47,8 +48,9 @@ public class Ticket : MonoBehaviour
             Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.075f);
             Vector3 STWP = Camera.main.ScreenToWorldPoint(curScreenPoint);
             STWP.z = 4.9f;
+            Debug.Log(transform.position);
 
-            Instantiate(menu, STWP, transform.rotation);
+            Instantiate(menu, new Vector3(transform.position.x+0.9f,transform.position.y, 5), transform.rotation);
             Debug.Log("Right click on this object");
         }    
     }

@@ -15,16 +15,16 @@ public class Client : MonoBehaviour
     short messageID = 1000;
 
     [Header("UI References")]
-    public Button sendCloseButton;
-    public InputField inputField; 
     public Text ClientLogger = null;
 
     #endregion
     public Color myColor;
 
     NetworkClient client;
-    public Material baseMat;
     public Material selectedMat;
+    public Ticket ticketPrefab;
+    public Board board;
+    public GameObject menu;
 
     //Set UI interactable properties
     private void Start()
@@ -128,6 +128,13 @@ public class Client : MonoBehaviour
                     float z = float.Parse(values[4]);
                     ticket.transform.position = new Vector3(x, y, z);
                     break;
+                case "A":
+                    Ticket instance = Ticket.Instantiate(ticketPrefab, new Vector3(2.788f, 2.1f, 5.075f), Quaternion.identity) as Ticket;
+                    instance.client = this;
+                    instance.board = board;
+                    instance.menu = menu;
+                    instance.name = values[1];
+                    break;
                 default:
                     Debug.Log("Case Other");
                     break;
@@ -141,16 +148,16 @@ public class Client : MonoBehaviour
     }
 
 
-    public void SendMsgToServer() 
-    {
-        string sendMsg = inputField.text;
-        MyNetworkMessage messageContainer = new MyNetworkMessage();
-        messageContainer.message = sendMsg;
-        Debug.Log("Send Message to server:" + sendMsg);
+    // public void SendMsgToServer() 
+    // {
+    //     string sendMsg = inputField.text;
+    //     MyNetworkMessage messageContainer = new MyNetworkMessage();
+    //     messageContainer.message = sendMsg;
+    //     Debug.Log("Send Message to server:" + sendMsg);
 
-        // Say hi to the server when connected
-        client.Send(messageID,messageContainer);
-    }
+    //     // Say hi to the server when connected
+    //     client.Send(messageID,messageContainer);
+    // }
 
     public void SendMsgToServer(string msg)
     {

@@ -55,8 +55,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CloseMenu.cs" />
+     <Compile Include="Assets\Details.cs" />
      <Compile Include="Assets\Menu.cs" />
      <Compile Include="Assets\RW\Scripts\ActionsTest.cs" />
+     <Compile Include="Assets\RW\Scripts\AddTicket.cs" />
      <Compile Include="Assets\RW\Scripts\Board.cs" />
      <Compile Include="Assets\RW\Scripts\Camera2D.cs" />
      <Compile Include="Assets\RW\Scripts\Client.cs" />
@@ -67,6 +70,7 @@
      <Compile Include="Assets\RW\Scripts\Server.cs" />
      <Compile Include="Assets\RW\Scripts\Ticket.cs" />
      <Compile Include="Assets\RW\Scripts\ViewTask.cs" />
+     <Compile Include="Assets\ShowDetails.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/paula/VirtualBoard/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
