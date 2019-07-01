@@ -20,15 +20,22 @@ public class Client : MonoBehaviour
     public Text ClientLogger = null;
 
     #endregion
+    public Color myColor;
 
     NetworkClient client;
-    public Material mat;
+    public Material baseMat;
+    public Material selectedMat;
 
     //Set UI interactable properties
     private void Start()
     {
         CreateClient();
-        sendCloseButton.interactable = false;
+        myColor = new Color(
+            UnityEngine.Random.Range(0f, 1f), 
+            UnityEngine.Random.Range(0f, 1f), 
+            UnityEngine.Random.Range(0f, 1f)
+        );
+        Debug.Log("Colooor: "+ myColor.ToString());
     }
     
     //Start client and stablish connection with server
@@ -93,14 +100,39 @@ public class Client : MonoBehaviour
         // The client and server can be on different projects, as long as the MyNetworkMessage or the class you are using have the same implementation on both projects
         // The first thing we do is deserialize the message to our custom type
         var objectMessage = netMessage.ReadMessage<MyNetworkMessage>();
-        Debug.Log("Received Message" + objectMessage.message);
 
         Debug.Log("Message received: " + objectMessage.message);
-
-        string name_object = objectMessage.message.Split(':')[1];
-        GameObject objectSelect = GameObject.Find(name_object);
-        Debug.Log(objectSelect);
-        objectSelect.GetComponent<Renderer>().material = mat;
+        var values = objectMessage.message.Split('|');
+        GameObject objectSelect;
+        Ticket ticket;
+        if (values.Length > 1){
+            switch (values[0])
+            {
+                case "S":
+                    Debug.Log("Case S");
+                    string color = values[2];
+                    objectSelect = GameObject.Find(values[1]);
+                    ticket = objectSelect.GetComponent<Ticket>();
+                    Debug.Log(ticket);
+                    selectedMat.color = new Color(float.Parse(values[2]),float.Parse(values[3]), float.Parse(values[4]));
+                    objectSelect.GetComponent<Renderer>().material = selectedMat;
+                    break;
+                case "R":
+                    Debug.Log("Case R"); 
+                    objectSelect = GameObject.Find(values[1]);
+                    ticket = objectSelect.GetComponent<Ticket>();
+                    ticket.GetComponent<Renderer>().material = ticket.baseMat;
+                    Debug.Log(values[2] + values[3] + values[4]);
+                    float x = float.Parse(values[2]);
+                    float y = float.Parse(values[3]);    
+                    float z = float.Parse(values[4]);
+                    ticket.transform.position = new Vector3(x, y, z);
+                    break;
+                default:
+                    Debug.Log("Case Other");
+                    break;
+            }
+        }
     }
 
     //Check if the client has been recived something

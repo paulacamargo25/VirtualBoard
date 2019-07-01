@@ -44,29 +44,29 @@ public class Camera2D : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Mouse is down");
+            // Debug.Log("Mouse is down");
 
-            RaycastHit hitInfo = new RaycastHit();
-            bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
-            if (hit)
-            {
-                Debug.Log("Hit " + hitInfo.transform.gameObject.name);
-                client.SendMsgToServer("CLick on:" + hitInfo.transform.gameObject.name);
-                this.dragObject = hitInfo.transform.gameObject;
-                if (hitInfo.transform.gameObject.tag == "Construction")
-                {
-                    Debug.Log("It's working!");
-                }
-                else
-                {
-                    Debug.Log("nopz");
-                }
-            }
-            else
-            {
-                Debug.Log("No hit");
-            }
-            Debug.Log("Mouse is down");
+            // RaycastHit hitInfo = new RaycastHit();
+            // bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
+            // if (hit)
+            // {
+            //     Debug.Log("Hit " + hitInfo.transform.gameObject.name);
+            //     client.SendMsgToServer("CLick on:" + hitInfo.transform.gameObject.name);
+            //     this.dragObject = hitInfo.transform.gameObject;
+            //     if (hitInfo.transform.gameObject.tag == "Construction")
+            //     {
+            //         Debug.Log("It's working!");
+            //     }
+            //     else
+            //     {
+            //         Debug.Log("nopz");
+            //     }
+            // }
+            // else
+            // {
+            //     Debug.Log("No hit");
+            // }
+            // Debug.Log("Mouse is down");
         }
     }
 }
