@@ -638,10 +638,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 713871dc-5918-486c-9e0f-a29aeb729460
+  cloudProjectId: e7773d98-72c7-45ac-8dae-4b8b06150a15
   framebufferDepthMemorylessMode: 0
-  projectName: ejemplo htc
-  organizationId: juan-velasquez-75f42163-755b-4808-8578-a3ae2071f085
+  projectName: Virtual Board 2D
+  organizationId: paulitacv25
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
