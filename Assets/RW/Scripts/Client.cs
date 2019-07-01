@@ -116,6 +116,15 @@ public class Client : MonoBehaviour
                     Debug.Log(ticket);
                     selectedMat.color = new Color(float.Parse(values[2]),float.Parse(values[3]), float.Parse(values[4]));
                     objectSelect.GetComponent<Renderer>().material = selectedMat;
+                    Debug.Log("=======coloor===");
+                    Debug.Log(myColor);
+                    Debug.Log(selectedMat.color);
+                    if (myColor == selectedMat.color){
+                        Debug.Log("==mi ticket");
+                    } else {
+                        ticket.canEdit = false;
+                        Debug.Log("==other ticket");
+                    }
                     break;
                 case "R":
                     Debug.Log("Case R"); 
@@ -127,9 +136,10 @@ public class Client : MonoBehaviour
                     float y = float.Parse(values[3]);    
                     float z = float.Parse(values[4]);
                     ticket.transform.position = new Vector3(x, y, z);
+                    ticket.canEdit = true;
                     break;
                 case "A":
-                    Ticket instance = Ticket.Instantiate(ticketPrefab, new Vector3(2.788f, 2.1f, 5.075f), Quaternion.identity) as Ticket;
+                    Ticket instance = Ticket.Instantiate(ticketPrefab, new Vector3(2.788f, 2.1f, 5f), Quaternion.identity) as Ticket;
                     instance.client = this;
                     instance.board = board;
                     instance.menu = menu;

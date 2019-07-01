@@ -12,6 +12,7 @@ public class Ticket : MonoBehaviour
     public Material baseMat;
     public Client client;
     public GameObject menu;
+    public bool canEdit;
 
     float max;
 
@@ -19,6 +20,7 @@ public class Ticket : MonoBehaviour
     void Start()
     {
         baseMat = GetComponent<Renderer>().material;
+        canEdit = true;
         
     }
 
@@ -30,9 +32,11 @@ public class Ticket : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log(name);
-        Debug.Log(client.myColor);
-        client.SendMsgToServer("S|" + this.name+'|'+client.myColor[0]+'|'+client.myColor[1]+'|'+client.myColor[2]);
+        if (canEdit){
+            Debug.Log(name);
+            Debug.Log(client.myColor);
+            client.SendMsgToServer("S|" + this.name+'|'+client.myColor[0]+'|'+client.myColor[1]+'|'+client.myColor[2]);
+        }
     }
 
     void OnMouseUp()
@@ -43,44 +47,48 @@ public class Ticket : MonoBehaviour
 
     void OnMouseOver() 
     {
-        if(Input.GetMouseButtonDown(1))
-        {
-            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.075f);
-            Vector3 STWP = Camera.main.ScreenToWorldPoint(curScreenPoint);
-            STWP.z = 4.9f;
-            Debug.Log(transform.position);
+        if (canEdit){
+            if(Input.GetMouseButtonDown(1))
+            {
+                Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.075f);
+                Vector3 STWP = Camera.main.ScreenToWorldPoint(curScreenPoint);
+                STWP.z = 4.9f;
+                Debug.Log(transform.position);
 
-            Instantiate(menu, new Vector3(transform.position.x+0.9f,transform.position.y, 5), transform.rotation);
-            Debug.Log("Right click on this object");
-        }    
+                Instantiate(menu, new Vector3(transform.position.x+0.9f,transform.position.y, 5), transform.rotation);
+                Debug.Log("Right click on this object");
+            }    
+        }
     }
 
     void OnMouseDrag()
     {  
-        Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.075f);
-        Vector3 STWP = Camera.main.ScreenToWorldPoint(curScreenPoint);     
-        STWP.z = 5.075f;
+        if (canEdit){
 
-        int j = 0;
-        max = board.width;
-        for (int i = 0; i < board.numLists; i++)
-        {
-            if(Mathf.Abs(board.xList[i] - STWP.x) < max)
+            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.075f);
+            Vector3 STWP = Camera.main.ScreenToWorldPoint(curScreenPoint);     
+            STWP.z = 5.075f;
+
+            int j = 0;
+            max = board.width;
+            for (int i = 0; i < board.numLists; i++)
             {
-                max = Mathf.Abs(board.xList[i] - STWP.x);
-                j = i;
+                if(Mathf.Abs(board.xList[i] - STWP.x) < max)
+                {
+                    max = Mathf.Abs(board.xList[i] - STWP.x);
+                    j = i;
+                }
             }
+            STWP.x = board.xList[j];
+    
+            if(STWP.y > 2.1f)
+            {
+                STWP.y = 2.1f;
+            } 
+            else if(STWP.y < 1.3f) {
+                STWP.y = 1.3f;
+            }
+            transform.position = STWP;
         }
-        STWP.x = board.xList[j];
- 
-        if(STWP.y > 2.1f)
-        {
-            STWP.y = 2.1f;
-        } 
-        else if(STWP.y < 1.3f) {
-            STWP.y = 1.3f;
-        }
-
-        transform.position = STWP;
     }
 }
