@@ -55,8 +55,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CloseMenu.cs" />
      <Compile Include="Assets\Menu.cs" />
      <Compile Include="Assets\RW\Scripts\ActionsTest.cs" />
+     <Compile Include="Assets\RW\Scripts\AddTicket.cs" />
      <Compile Include="Assets\RW\Scripts\Board.cs" />
      <Compile Include="Assets\RW\Scripts\Camera2D.cs" />
      <Compile Include="Assets\RW\Scripts\Client.cs" />
