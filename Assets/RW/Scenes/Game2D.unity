@@ -790,7 +790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d620a8018500cc44887158b1795f4b1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ipAddress: 192.168.0.36
+  ipAddress: 192.168.43.48
   port: 80
   ClientLogger: {fileID: 0}
   myColor: {r: 0, g: 0, b: 0, a: 0}
@@ -1006,6 +1006,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ticket
       objectReference: {fileID: 0}
+    - target: {fileID: 3218633252279370472, guid: 11c9802c3296a194c9bfbf29a4fb65c6,
+        type: 3}
+      propertyPath: board
+      value: 
+      objectReference: {fileID: 6422918041803172449}
+    - target: {fileID: 3218633252279370472, guid: 11c9802c3296a194c9bfbf29a4fb65c6,
+        type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 5672567117995120726, guid: 70195d0d42a3f6a4fb5838c1c85c0c02,
+        type: 3}
+    - target: {fileID: 3218633252279370472, guid: 11c9802c3296a194c9bfbf29a4fb65c6,
+        type: 3}
+      propertyPath: client
+      value: 
+      objectReference: {fileID: 665359793}
+    - target: {fileID: 3218633252279370472, guid: 11c9802c3296a194c9bfbf29a4fb65c6,
+        type: 3}
+      propertyPath: baseMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 0fd3c5578f1a7684c9fd492917a1fab1, type: 2}
     - target: {fileID: 6223906332941748752, guid: 11c9802c3296a194c9bfbf29a4fb65c6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1061,27 +1082,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3218633252279370472, guid: 11c9802c3296a194c9bfbf29a4fb65c6,
-        type: 3}
-      propertyPath: board
-      value: 
-      objectReference: {fileID: 6422918041803172449}
-    - target: {fileID: 3218633252279370472, guid: 11c9802c3296a194c9bfbf29a4fb65c6,
-        type: 3}
-      propertyPath: menu
-      value: 
-      objectReference: {fileID: 5672567117995120726, guid: 70195d0d42a3f6a4fb5838c1c85c0c02,
-        type: 3}
-    - target: {fileID: 3218633252279370472, guid: 11c9802c3296a194c9bfbf29a4fb65c6,
-        type: 3}
-      propertyPath: client
-      value: 
-      objectReference: {fileID: 665359793}
-    - target: {fileID: 3218633252279370472, guid: 11c9802c3296a194c9bfbf29a4fb65c6,
-        type: 3}
-      propertyPath: baseMat
-      value: 
-      objectReference: {fileID: 2100000, guid: 0fd3c5578f1a7684c9fd492917a1fab1, type: 2}
     - target: {fileID: 3068525030316546292, guid: 11c9802c3296a194c9bfbf29a4fb65c6,
         type: 3}
       propertyPath: m_Enabled
