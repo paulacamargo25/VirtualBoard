@@ -21,10 +21,9 @@ public class Client : MonoBehaviour
     public Color myColor;
 
     NetworkClient client;
-    public Material selectedMat;
     public Ticket ticketPrefab;
     public Board board;
-    public GameObject menu;
+    public Menu menu;
 
     //Set UI interactable properties
     private void Start()
@@ -114,11 +113,9 @@ public class Client : MonoBehaviour
                     objectSelect = GameObject.Find(values[1]);
                     ticket = objectSelect.GetComponent<Ticket>();
                     Debug.Log(ticket);
+                    Material selectedMat = new Material(Shader.Find("Unlit/Color")); 
                     selectedMat.color = new Color(float.Parse(values[2]),float.Parse(values[3]), float.Parse(values[4]));
                     objectSelect.GetComponent<Renderer>().material = selectedMat;
-                    Debug.Log("=======coloor===");
-                    Debug.Log(myColor);
-                    Debug.Log(selectedMat.color);
                     if (myColor == selectedMat.color){
                         Debug.Log("==mi ticket");
                     } else {

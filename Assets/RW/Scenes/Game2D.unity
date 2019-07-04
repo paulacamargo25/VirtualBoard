@@ -280,7 +280,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 26.991467
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -794,11 +794,10 @@ MonoBehaviour:
   port: 80
   ClientLogger: {fileID: 0}
   myColor: {r: 0, g: 0, b: 0, a: 0}
-  selectedMat: {fileID: 2100000, guid: a83b01bfa9eb74747b86ef0e89058a6e, type: 2}
   ticketPrefab: {fileID: 3218633252279370472, guid: 11c9802c3296a194c9bfbf29a4fb65c6,
     type: 3}
   board: {fileID: 6422918041803172449}
-  menu: {fileID: 5672567117995120726, guid: 70195d0d42a3f6a4fb5838c1c85c0c02, type: 3}
+  menu: {fileID: 0}
 --- !u!4 &665359794
 Transform:
   m_ObjectHideFlags: 0
@@ -1015,7 +1014,7 @@ PrefabInstance:
         type: 3}
       propertyPath: menu
       value: 
-      objectReference: {fileID: 5672567117995120726, guid: 70195d0d42a3f6a4fb5838c1c85c0c02,
+      objectReference: {fileID: -6273306005663143317, guid: 70195d0d42a3f6a4fb5838c1c85c0c02,
         type: 3}
     - target: {fileID: 3218633252279370472, guid: 11c9802c3296a194c9bfbf29a4fb65c6,
         type: 3}
