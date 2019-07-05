@@ -44,7 +44,8 @@ public class Camera2D : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            // Debug.Log("Mouse is down");
+
+            Debug.Log("Mouse is down");
 
             // RaycastHit hitInfo = new RaycastHit();
             // bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);

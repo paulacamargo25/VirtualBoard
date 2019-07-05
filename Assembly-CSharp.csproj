@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\CloseMenu.cs" />
      <Compile Include="Assets\Details.cs" />
+     <Compile Include="Assets\EditTicket.cs" />
      <Compile Include="Assets\Menu.cs" />
      <Compile Include="Assets\RW\Scripts\ActionsTest.cs" />
      <Compile Include="Assets\RW\Scripts\AddTicket.cs" />
@@ -71,6 +72,7 @@
      <Compile Include="Assets\RW\Scripts\Ticket.cs" />
      <Compile Include="Assets\RW\Scripts\ViewTask.cs" />
      <Compile Include="Assets\ShowDetails.cs" />
+     <Compile Include="Assets\ShowEdit.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

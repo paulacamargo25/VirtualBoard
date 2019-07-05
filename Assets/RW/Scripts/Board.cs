@@ -14,7 +14,7 @@ public class Board : MonoBehaviour
     public string id;
     public Client client;
     public GameObject listTitle;
-    public GameObject menu;
+    public Menu menu;
     public Ticket ticketPrefab;
 
     // Start is called before the first frame update
