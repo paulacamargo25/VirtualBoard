@@ -7,6 +7,7 @@ public class Ticket : MonoBehaviour
     private Vector3 screenPoint;
     private Vector3 offset;
 
+    public string id;
     [Header("UI References")]
     public Board board;
     public Material baseMat;
