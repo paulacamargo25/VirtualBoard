@@ -9,6 +9,8 @@ public class Client : MonoBehaviour
 {
     #region Public Variables
     [Header("Network")]
+    public string userToken;
+    public string apiKey;
     public string ipAddress = "192.168.43.82";
     public int port = 54010;
     // The id we use to identify our messages and register the handler
@@ -21,14 +23,15 @@ public class Client : MonoBehaviour
     public Color myColor;
 
     NetworkClient client;
-    public Material selectedMat;
     public Ticket ticketPrefab;
     public Board board;
-    public GameObject menu;
+    public Menu menu;
 
     //Set UI interactable properties
     private void Start()
     {
+        userToken = "b280cd1388f45f72bdc4e50246985a7e05706ae7761858d1b7c5325f3ee4c080";
+        apiKey = "ee88b5af8d4961bf5373a3fece25d638";
         CreateClient();
         myColor = new Color(
             UnityEngine.Random.Range(0f, 1f), 
@@ -114,11 +117,9 @@ public class Client : MonoBehaviour
                     objectSelect = GameObject.Find(values[1]);
                     ticket = objectSelect.GetComponent<Ticket>();
                     Debug.Log(ticket);
+                    Material selectedMat = new Material(Shader.Find("Unlit/Color")); 
                     selectedMat.color = new Color(float.Parse(values[2]),float.Parse(values[3]), float.Parse(values[4]));
                     objectSelect.GetComponent<Renderer>().material = selectedMat;
-                    Debug.Log("=======coloor===");
-                    Debug.Log(myColor);
-                    Debug.Log(selectedMat.color);
                     if (myColor == selectedMat.color){
                         Debug.Log("==mi ticket");
                     } else {

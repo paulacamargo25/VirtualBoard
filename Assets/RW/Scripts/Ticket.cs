@@ -7,11 +7,12 @@ public class Ticket : MonoBehaviour
     private Vector3 screenPoint;
     private Vector3 offset;
 
+    public string id;
     [Header("UI References")]
     public Board board;
     public Material baseMat;
     public Client client;
-    public GameObject menu;
+    public Menu menu;
     public bool canEdit;
 
     float max;
@@ -55,7 +56,8 @@ public class Ticket : MonoBehaviour
                 STWP.z = 4.9f;
                 Debug.Log(transform.position);
 
-                Instantiate(menu, new Vector3(transform.position.x+0.9f,transform.position.y, 5), transform.rotation);
+                Menu instance = Menu.Instantiate(menu, new Vector3(transform.position.x+0.9f,transform.position.y, 5), transform.rotation) as Menu;
+                instance.ticket  = this;
                 Debug.Log("Right click on this object");
             }    
         }
@@ -64,7 +66,6 @@ public class Ticket : MonoBehaviour
     void OnMouseDrag()
     {  
         if (canEdit){
-
             Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.075f);
             Vector3 STWP = Camera.main.ScreenToWorldPoint(curScreenPoint);     
             STWP.z = 5.075f;
