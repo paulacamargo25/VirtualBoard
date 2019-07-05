@@ -9,6 +9,8 @@ public class Client : MonoBehaviour
 {
     #region Public Variables
     [Header("Network")]
+    public string userToken;
+    public string apiKey;
     public string ipAddress = "192.168.43.82";
     public int port = 54010;
     // The id we use to identify our messages and register the handler
@@ -29,6 +31,8 @@ public class Client : MonoBehaviour
     //Set UI interactable properties
     private void Start()
     {
+        userToken = "b280cd1388f45f72bdc4e50246985a7e05706ae7761858d1b7c5325f3ee4c080";
+        apiKey = "ee88b5af8d4961bf5373a3fece25d638";
         CreateClient();
         myColor = new Color(
             UnityEngine.Random.Range(0f, 1f), 
