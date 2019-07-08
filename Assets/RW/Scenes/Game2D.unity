@@ -792,7 +792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userToken: 
   apiKey: 
-  ipAddress: 192.168.0.36
+  ipAddress: 192.168.43.48
   port: 80
   ClientLogger: {fileID: 0}
   myColor: {r: 0, g: 0, b: 0, a: 0}
@@ -2234,7 +2234,7 @@ PrefabInstance:
     - target: {fileID: 6023454610835468958, guid: 0fa1593be4ad9744c8385c506d344c77,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.794
+      value: 2.844
       objectReference: {fileID: 0}
     - target: {fileID: 6023454610835468958, guid: 0fa1593be4ad9744c8385c506d344c77,
         type: 3}
@@ -2286,6 +2286,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6023454610835468958, guid: 0fa1593be4ad9744c8385c506d344c77,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.51960754
+      objectReference: {fileID: 0}
     - target: {fileID: 6023454610835468947, guid: 0fa1593be4ad9744c8385c506d344c77,
         type: 3}
       propertyPath: m_Enabled
@@ -2305,6 +2310,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005562587194152329, guid: 0fa1593be4ad9744c8385c506d344c77,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609712713155724626, guid: 0fa1593be4ad9744c8385c506d344c77,
+        type: 3}
+      propertyPath: m_Text
+      value: Agregar Ticket
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609712713155724626, guid: 0fa1593be4ad9744c8385c506d344c77,
+        type: 3}
+      propertyPath: m_FontSize
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fa1593be4ad9744c8385c506d344c77, type: 3}
