@@ -56,7 +56,7 @@ public class Board : MonoBehaviour
 
             for(int i=0; i < jsonvale.Count; i++)
             {
-                Ticket instance = Ticket.Instantiate(ticketPrefab, new Vector3(x, 2.1f-0.2f*i, 5f), Quaternion.identity) as Ticket;
+                Ticket instance = Ticket.Instantiate(ticketPrefab, new Vector3(x, 2.1f-0.2f*i, 5.075f), Quaternion.identity) as Ticket;
                 instance.client = client;
                 instance.board = this;
                 instance.menu = menu;

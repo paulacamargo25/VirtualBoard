@@ -300,6 +300,7 @@ MonoBehaviour:
   description: {fileID: 0}
   title: {fileID: 0}
   list: {fileID: 0}
+  members: {fileID: 0}
 --- !u!1 &4929623215474929323
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +375,7 @@ MonoBehaviour:
     m_MaxSize: 300
     m_Alignment: 0
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
