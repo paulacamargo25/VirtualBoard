@@ -42,9 +42,12 @@ public class Ticket : MonoBehaviour
 
     void OnMouseUp()
     { 
-        Debug.Log("========= UUPPPP ======");
-        client.SendMsgToServer("R|" + this.name+'|'+transform.position.x+'|'+transform.position.y+'|'+transform.position.z);
+        if (canEdit){
+            Debug.Log("========= UUPPPP ======");
+            client.SendMsgToServer("R|" + this.name+'|'+transform.position.x+'|'+transform.position.y+'|'+transform.position.z);
+        }
     }
+
 
     void OnMouseOver() 
     {
