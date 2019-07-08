@@ -58,6 +58,7 @@ public class Ticket : MonoBehaviour
 
                 Menu instance = Menu.Instantiate(menu, new Vector3(transform.position.x+0.9f,transform.position.y, 5), transform.rotation) as Menu;
                 instance.ticket  = this;
+                instance.client = client;
                 Debug.Log("Right click on this object");
             }    
         }

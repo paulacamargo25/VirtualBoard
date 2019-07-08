@@ -16,6 +16,7 @@ public class ShowEdit : MonoBehaviour
     {
         EditTicket instance = Instantiate(edit, new Vector3(transform.position.x+0.5f, transform.position.y-0.2f, 5), transform.rotation) as EditTicket;
         instance.ticket  = transform.parent.gameObject.GetComponent<Menu>().ticket;
+        instance.client = transform.parent.gameObject.GetComponent<Menu>().client;
         Destroy(transform.parent.gameObject);
 
     }

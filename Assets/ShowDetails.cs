@@ -15,8 +15,10 @@ public class ShowDetails : MonoBehaviour
 
     void OnMouseDown()
     {
-        Details instance = Instantiate(details, new Vector3(transform.position.x+0.5f, transform.position.y-0.5f, 5), transform.rotation) as Details;
+        Details instance = Instantiate(details, new Vector3(transform.position.x+0.5f, transform.position.y-0.5f, 4.8f), transform.rotation) as Details;
         instance.ticket  = transform.parent.gameObject.GetComponent<Menu>().ticket;
+        instance.client = transform.parent.gameObject.GetComponent<Menu>().client;
+        
         Destroy(transform.parent.gameObject);
 
     }

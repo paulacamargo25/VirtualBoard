@@ -1664,6 +1664,25 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ec8b61f01bf3941418a98ae9997255f6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd3d02283332f6d4f814700a68f44323, type: 3}
+--- !u!1 &1464161678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6023454610835468946, guid: 0fa1593be4ad9744c8385c506d344c77,
+    type: 3}
+  m_PrefabInstance: {fileID: 6023454611181912886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1464161679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464161678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f9e78759f013d498e375865d40a9e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  client: {fileID: 665359793}
 --- !u!1 &1543894699
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,6 +2332,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: client
+      value: 
+      objectReference: {fileID: 665359793}
+    - target: {fileID: 0}
+      propertyPath: ticket
+      value: 
+      objectReference: {fileID: 1589279191}
     - target: {fileID: 6023454610835468946, guid: 0fa1593be4ad9744c8385c506d344c77,
         type: 3}
       propertyPath: m_Name
@@ -2393,16 +2420,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7682648237212522756, guid: 0fa1593be4ad9744c8385c506d344c77,
-        type: 3}
-      propertyPath: client
-      value: 
-      objectReference: {fileID: 665359793}
-    - target: {fileID: 7682648237212522756, guid: 0fa1593be4ad9744c8385c506d344c77,
-        type: 3}
-      propertyPath: ticket
-      value: 
-      objectReference: {fileID: 1589279191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fa1593be4ad9744c8385c506d344c77, type: 3}
 --- !u!114 &6422918041803172449 stripped
