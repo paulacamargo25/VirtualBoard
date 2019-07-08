@@ -4,6 +4,8 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class Client : MonoBehaviour
 {
@@ -145,6 +147,12 @@ public class Client : MonoBehaviour
                     instance.board = board;
                     instance.menu = menu;
                     instance.name = values[1];
+                    break;
+                case "U":
+                    objectSelect = GameObject.Find(values[1]);
+                    ticket = objectSelect.GetComponent<Ticket>();
+                    ticket.UpdateName();
+                    Debug.Log(ticket);
                     break;
                 default:
                     Debug.Log("Case Other");

@@ -36,7 +36,8 @@ public class EditTicket : MonoBehaviour
 
     public void onSaved(){
         StartCoroutine(Upload());
-        client.SendMsgToServer("U|" + ticket.id);
+        System.Threading.Thread.Sleep(1000);
+        client.SendMsgToServer("U|" + "Ticket-"+ticket.id);
         Destroy(this.gameObject);
     }
 
@@ -46,6 +47,15 @@ public class EditTicket : MonoBehaviour
         Debug.Log("url: "+url);
         UnityWebRequest www = UnityWebRequest.Put(url, "dummy");
         yield return www.Send();
+        Debug.Log("========EEnd======");
+        if (www.isNetworkError || www.isHttpError)
+         {
+             Debug.Log(www.error);
+         }
+         else
+         {
+             Debug.Log("Success");
+         }
     }
 
     public void onCancel(){

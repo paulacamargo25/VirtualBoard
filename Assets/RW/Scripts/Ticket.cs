@@ -1,6 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LitJson;
+using UnityEngine.UI;
+using System.Threading;
+using System.Threading.Tasks;
+
 
 public class Ticket : MonoBehaviour
 {
@@ -28,6 +33,26 @@ public class Ticket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    public void UpdateName(){
+        string url = "https://api.trello.com/1/cards/" + this.id + "?key=" + client.apiKey + "&token=" + client.userToken;
+        Debug.Log(url);
+        WWW www = new WWW(url);
+        while(www.isDone != true) {}
+        if (www.error == null)
+        {
+            JsonData jsonvale = JsonMapper.ToObject(www.text);            
+            Debug.Log("despues");
+            Debug.Log(jsonvale["name"].ToString());
+            transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Text>().text = jsonvale["name"].ToString();
+
+        }
+        else
+        {
+            Debug.Log("ERROR: " + www.error);
+        } 
 
     }
 
